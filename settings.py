@@ -1,1 +1,2 @@
-browser_headless = True
+browser_headless: bool = False
+url: str = "https://automationexercise.com/"

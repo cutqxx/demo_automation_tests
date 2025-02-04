@@ -7,12 +7,9 @@ class BasePage:
 
     def __init__(self, page: Page):
         self.page: Page = page
-        self.header_element = '//div[@class="shop-menu pull-right"] // a'
+        self.header_login = self.page.locator('//div[@class="shop-menu pull-right"] // a', has_text="Signup / Login")
+        self.logged_user_header = self.page.locator('//div[@class="shop-menu pull-right"] // a', has_text="Logged in as")
 
     def open(self):
         self.page.goto(self.url, wait_until="domcontentloaded")
-
-    def header_element_click(self,element: Literal["Home", "Products", "Cart", "Signup / Login"]):
-        self.page.locator(self.header_element, has_text=f" {element}")
-
 
